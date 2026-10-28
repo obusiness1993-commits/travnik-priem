@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Елисей — приём у травника</title>
+  <meta name="description" content="Онлайн-приём у травника: расскажите, что беспокоит, и получите персональную программу.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top">
+    <span class="logo-name" data-specialist-short>Елисей</span>
+    <span class="logo-sub">травник</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#programs">Программы</a>
+    <a href="#method">Метод</a>
+    <a href="#about">О травнике</a>
+  </nav>
+  <a class="btn btn-ghost-light btn-sm" href="#consult">Начать приём</a>
+</header>
+
+<main id="top">
+  <!-- ===== Hero + консультация ===== -->
+  <section class="hero" id="consult">
+    <div class="hero-glow"></div>
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="eyebrow">Онлайн-приём · круглосуточно</div>
+        <h1>Приём у травника<br><em>не выходя из дома</em></h1>
+        <p class="lead">Расскажите, что вас беспокоит. Елисей выслушает и подскажет программу, с которой стоит начать.</p>
+      </div>
+
+      <div class="consult">
+        <div class="stage">
+          <div class="cabinet" id="cabinet">
+            <div id="avatar-slot"></div>
+            <video id="avatar-video" playsinline preload="auto" hidden></video>
+            <div class="cabinet-shade"></div>
+
+            <div class="live"><span class="dot"></span>На приёме</div>
+            <div class="cabinet-controls">
+              <button class="icon-btn" id="btn-sound" aria-label="Выключить звук">
+                <svg viewBox="0 0 24 24" class="i-on"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none"/></svg>
+                <svg viewBox="0 0 24 24" class="i-off"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6" fill="none"/></svg>
+              </button>
+              <button class="icon-btn" id="btn-skip" aria-label="Пропустить реплику" hidden>
+                <svg viewBox="0 0 24 24"><path d="M6 6l8 6-8 6zM16 6h2v12h-2z"/></svg>
+              </button>
+            </div>
+
+            <div class="subtitle" id="subtitle" aria-live="polite"></div>
+
+            <div class="start-overlay" id="start-overlay">
+              <button class="play" id="btn-start" aria-label="Начать консультацию">
+                <svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg>
+              </button>
+              <div class="start-title">Начать консультацию</div>
+              <div class="start-note">Включите звук — Елисей будет говорить с вами</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="panel-head">
+            <span class="eyebrow eyebrow-dim">Ваш ответ</span>
+            <span class="step" id="step"></span>
+          </div>
+          <div class="options" id="options">
+            <div class="options-empty">Нажмите ▶, чтобы начать приём</div>
+          </div>
+          <div class="product-card" id="product-card" hidden></div>
+        </aside>
+      </div>
+
+      <div class="trust">
+        <div><b>20+</b><span>лет работы с травами</span></div>
+        <div><b>5</b><span>авторских программ</span></div>
+        <div><b>7 дней</b><span>на возврат, если не подошло</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Ромашка</span><span>Чабрец</span><span>Зверобой</span><span>Мята</span><span>Календула</span><span>Шиповник</span><span>Липа</span><span>Душица</span><span>Тысячелистник</span><span>Иван-чай</span>
+      <span>Ромашка</span><span>Чабрец</span><span>Зверобой</span><span>Мята</span><span>Календула</span><span>Шиповник</span><span>Липа</span><span>Душица</span><span>Тысячелистник</span><span>Иван-чай</span>
+    </div>
+  </div>
+
+  <!-- ===== Программы ===== -->
+  <section class="section" id="programs">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Программы</div>
+        <h2>Мягкая поддержка организма<br><em>по старым рецептам</em></h2>
+        <p class="section-lead">Видеоуроки, сборы и простые ежедневные практики. В электронном виде — доступ сразу после оплаты.</p>
+      </div>
+      <div class="grid" id="catalog-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Метод ===== -->
+  <section class="section section-alt" id="method">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Как проходит приём</div>
+        <h2>Четыре шага <em>к своей программе</em></h2>
+      </div>
+      <ol class="steps">
+        <li><span class="num">01</span><b>Расскажите</b><p>Выберите, что беспокоит, — Елисей ответит голосом и уточнит детали.</p></li>
+        <li><span class="num">02</span><b>Получите совет</b><p>Он подскажет программу, которая подходит именно к вашей ситуации.</p></li>
+        <li><span class="num">03</span><b>Оплатите онлайн</b><p>Картой или через СБП — безопасно и за минуту.</p></li>
+        <li><span class="num">04</span><b>Начните сегодня</b><p>Материалы придут на почту и в Telegram сразу после оплаты.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== О травнике ===== -->
+  <section class="quote" id="about">
+    <div class="wrap">
+      <div class="eyebrow eyebrow-light">О травнике</div>
+      <blockquote>«Травы не лечат за один день. Они мягко возвращают телу силы — если относиться к ним с уважением и терпением.»</blockquote>
+      <div class="sign"><span data-specialist-name>Мастер Елисей</span> · <span data-specialist-title>травник</span></div>
+      <a class="btn btn-light" href="#consult">Записаться на приём</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo logo-dark"><span class="logo-name" data-specialist-short>Елисей</span><span class="logo-sub">травник</span></div>
+      <nav><a href="#programs">Программы</a><a href="#method">Метод</a><a href="#consult">Приём</a></nav>
+    </div>
+    <p class="disclaimer">Материалы носят информационный характер и не являются медицинской консультацией, диагнозом или назначением лечения.
+      Имеются противопоказания — перед применением трав посоветуйтесь с врачом. При острой боли, крови, высокой температуре
+      и других тревожных симптомах сразу обращайтесь за медицинской помощью.</p>
+    <p class="foot-small">© <span data-specialist-name>Мастер Елисей</span> · прототип</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Закрыть">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="scenario.js"></script>
+<script src="avatar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
